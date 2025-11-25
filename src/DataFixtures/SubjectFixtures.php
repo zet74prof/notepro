@@ -14,13 +14,13 @@ class SubjectFixtures extends Fixture
     {
         $faker = Factory::create();
         $subject = ['CEJM', 'Maths', 'Anglais', 'Bloc 1', 'Bloc 2', 'Bloc 3', 'Ateliers de professionnalisation'];
-
-        for ($i = 1; $i <= 5; $i++) {
+        $counter = 1;
+        foreach ($subject as $subjectName) {
             $classLevel = new Subject();
-            $classLevel->setLabel(sprintf('%s', $faker->randomElement($subject)));
+            $classLevel->setLabel($subjectName);
             $manager->persist($classLevel);
 
-            $this->addReference('subject_' . $i, $classLevel);
+            $this->addReference('subject_' . $counter++, $classLevel);
         }
 
         $manager->flush();

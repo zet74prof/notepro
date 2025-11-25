@@ -53,7 +53,7 @@ class UserFixtures extends Fixture implements DependentFixtureInterface
             $user->setPassword($this->hasher->hashPassword($user, $plain));
             $user->setRoles(['ROLE_PROFESSOR']);
             for ($j = 1; $j <= 2; $j++) {
-                $subjectRef = 'subject_' . $faker->numberBetween(1, 5);
+                $subjectRef = 'subject_' . $faker->numberBetween(1, 7);
                 $user->addSubject($this->getReference($subjectRef, Subject::class));
             }
             for ($j = 1; $j <= 3; $j++) {
