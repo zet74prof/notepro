@@ -14,7 +14,7 @@ class Grade
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(type: Types::DECIMAL, precision: 4, scale: 2, nullable: true)]
+    #[ORM\Column(type: Types::DECIMAL, precision: 5, scale: 2, nullable: true)]
     private ?string $grade = null;
 
     #[ORM\Column(nullable: false)]
